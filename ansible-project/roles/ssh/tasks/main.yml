@@ -1,0 +1,6 @@
+---
+- name: Add public key to authorized_keys
+  authorized_key:
+    user: sa
+    state: present
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCpVHfzQTY87OdhTd4H41XOIed77Itk0+1rmZnrZy8yJVKP1L9Tl9UONRdjhHlhNjnEg+iPAwncDysMJqRh2nKZ2pMrr7KpHbVFEwIhyKChUt+lp+kVgvVj3uDhb7j+TbEEUdl6Bx2EPC4EKMoyLUA0KAD54aCTCcdExfcfXk5W31uhQkrARl8n9VxVMh0Oci48vbnLHl1pQD8vwxgM/lbj+GtrHtA2QAJuSt38F/kcGLeH6LE9ZJkG4YPRqhfdiAN7EEQ2xjx1B28dKSoj/h14/lBkwIBWkby5XikzKy90cEXR80kMFVkSpFO28l7EeuGdLjeQKSSw7KFkR7y9mTLupmNceBIQFnt1EOaoRhzQnj+Wu1ReV//OOxR/yDd6A08h3EU1WwLzng7CT11MmyCOheqxSYG/KClaixFm766HLbGlZ6TcRmaHA6fWlu+pvEtvnBT6yecchI6yLrIjkRsurLQyuYxlgFKyiiCu3fhAQ5o+U+z8sjQCV/b4AnWYbEs= masha@DESKTOP-S3805S6"
