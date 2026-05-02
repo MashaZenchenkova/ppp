@@ -1,0 +1,39 @@
+---
+- name: Create web directory
+  file:
+    path: /var/www/mysite
+    state: directory
+    owner: www-data
+    group: www-data
+
+- name: Copy index.html
+  copy:
+    dest: /var/www/mysite/index.html
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head><title>Ansible Site</title></head>
+      <body>
+        <h1>Развёрнуто через Ansible!</h1>
+        <p>Работает на Nginx.</p>
+      </body>
+      </html>
+
+- name: Configure nginx site
+  copy:
+    dest: /etc/nginx/sites-available/mysite
+    content: |
+      server {
+          listen 8080;
+          root /var/www/mysite;
+          index index.html;
+          server_name _;
+      }
+
+- name: Enable site
+  file:
+    src: /etc/nginx/sites-available/mysite
+    dest: /etc/nginx/sites-enabled/mysite
+    state: link
+
+
